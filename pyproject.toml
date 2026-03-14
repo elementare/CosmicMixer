@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=77.0.3,<83", "wheel>=0.45.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CosmicMixer"
+version = "0.1.0"
+description = "A sleek PyQt6 audio mixer for Linux desktops with SCSS theming."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.10"
+
+authors = [
+    { name = "Carlos D. M. S. Simões" }
+]
+
+license = { text = "MIT" }
+
+keywords = [
+    "audio",
+    "pulseaudio",
+    "pipewire",
+    "volume mixer",
+    "linux",
+    "pyqt6",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: X11 Applications :: Qt",
+    "Environment :: Wayland",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+dependencies = [
+    "PyQt6>=6.6",
+    "pulsectl>=23.5",
+    "libsass>=0.23"
+]
+
+[project.urls]
+homepage = "https://github.com/elementare/CosmicMixer"
+issues = "https://github.com/elementare/CosmicMixer/issues"
+
+[project.scripts]
+cosmic-mixer = "CosmicMixer.mixer:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["CosmicMixer*"]
+
+[tool.setuptools.package-data]
+CosmicMixer = [
+    "themes/*.scss",
+    "assets/*.png"
+]
