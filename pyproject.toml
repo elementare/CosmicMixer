@@ -61,5 +61,6 @@ include = ["CosmicMixer*"]
 [tool.setuptools.package-data]
 CosmicMixer = [
     "themes/*.scss",
+    "themes/palettes/*.scss"
     "assets/*.png"
 ]
